@@ -35,7 +35,6 @@ import org.junit.runner.RunWith;
 import javax.inject.Inject;
 import java.util.logging.Logger;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 @RunWith(Arquillian.class)
