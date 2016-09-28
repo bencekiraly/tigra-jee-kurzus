@@ -81,6 +81,6 @@ public class CarRegistrationTest {
         car.setLicensePlateNumber("1GDG970");
 
         carRegistration.register(car);
-        assertEquals(car.getOwner(), carRegistration.find(car.getId()).getLicensePlateNumber());
+        assertEquals(car.getLicensePlateNumber(), carRegistration.find(car.getId()).getLicensePlateNumber());
     }
 }
