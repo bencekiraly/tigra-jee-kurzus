@@ -18,18 +18,16 @@
                 <h:outputLabel for="email" value="Email:"/>
                 <h:inputText id="email" value="#{newAllocation.email}"/>
                 <h:message for="email" errorClass="invalid"/>
-                <h:inputText>
-                    <h:outputLabel for="start" value="Start date:"/>
-                    <h:inputText id="start" value="#{newAllocation.start}"/>
-                    <h:message for="start" errorClass="invalid"/>
-                    <f:convertDateTime/>
+                <h:outputLabel for="start" value="Start:"/>
+                <h:inputText id="start" value="#{newAllocation.start}" label="Start date">
+                    <f:convertDateTime pattern="yyyy-mm-dd"/>
                 </h:inputText>
-                <h:inputText>
-                    <h:outputLabel for="stop" value="Stop date:"/>
-                    <h:inputText id="stop" value="#{newAllocation.stop}"/>
-                    <h:message for="stop" errorClass="invalid"/>
-                    <f:convertDateTime/>
+                <h:message for="start" errorClass="invalid"/>
+                <h:outputLabel for="stop" value="Stop:"/>
+                <h:inputText id="stop" value="#{newAllocation.stop}" label="Stop date">
+                    <f:convertDateTime pattern="yyyy-mm-dd"/>
                 </h:inputText>
+                <h:message for="stop" errorClass="invalid"/>
             </h:panelGrid>
 
             <p>
