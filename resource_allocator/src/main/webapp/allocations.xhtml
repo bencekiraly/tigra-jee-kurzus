@@ -22,13 +22,13 @@
                     <h:outputLabel for="start" value="Start date:"/>
                     <h:inputText id="start" value="#{newAllocation.start}"/>
                     <h:message for="start" errorClass="invalid"/>
-                    <f:convertDateTime pattern="k:m"/>
+                    <f:convertDateTime/>
                 </h:inputText>
                 <h:inputText>
                     <h:outputLabel for="stop" value="Stop date:"/>
                     <h:inputText id="stop" value="#{newAllocation.stop}"/>
                     <h:message for="stop" errorClass="invalid"/>
-                    <f:convertDateTime pattern="k:m"/>
+                    <f:convertDateTime/>
                 </h:inputText>
             </h:panelGrid>
 

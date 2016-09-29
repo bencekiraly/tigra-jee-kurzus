@@ -54,7 +54,7 @@ public class AllocationRepository {
         // Swap criteria statements if you would like to try out type-safe criteria queries, a new
         // feature in JPA 2.0
         // criteria.select(member).orderBy(cb.asc(member.get(Member_.name)));
-        criteria.select(allocation).orderBy(cb.asc(allocation.get("start")));
+        criteria.select(allocation).orderBy(cb.asc(allocation.get("subject")));
         return em.createQuery(criteria).getResultList();
     }
 }

@@ -43,7 +43,7 @@ public class AllocationListProducer {
         return allocations;
     }
 
-    public void onMemberListChanged(@Observes(notifyObserver = Reception.IF_EXISTS) final Allocation allocation) {
+    public void onAllocationListChanged(@Observes(notifyObserver = Reception.IF_EXISTS) final Allocation allocation) {
         retrieveAllAllocationsOrderedByDate();
     }
 
