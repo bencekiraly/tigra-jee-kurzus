@@ -18,7 +18,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #F1F1F1;
+  background-color: #FFFFFF;
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   font-size: 0.8em;
   color:#363636;
@@ -27,46 +27,17 @@ body {
 #container {
   margin: 0 auto;
   padding: 0 20px 10px 20px;
-  border-top: 5px solid #000000;
-  border-left: 5px solid #8c8f91;
-  border-right: 5px solid #8c8f91;
-  border-bottom: 25px solid #8c8f91;
+  border: 2px solid #000000;
   width: 865px; /* subtract 40px from banner width for padding */
   background: #FFFFFF;
-  background-image: url(#{request.contextPath}/resources/gfx/headerbkg.png);
-  background-repeat: repeat-x;
-  padding-top: 30px;
-  box-shadow: 3px 3px 15px #d5d5d5;
+  padding-top: 20px;
 }
 #content {
   float: left;
-  width: 500px;
+  width: 800px;
   margin: 20px;
 }
-#aside {
-  font-size: 0.9em;
-  width: 275px;
-  float: left;
-  margin: 20px 0px;
-  border: 1px solid #D5D5D5;
-  background: #F1F1F1;
-  background-image: url(#{request.contextPath}/resources/gfx/asidebkg.png);
-  background-repeat: repeat-x;
-  padding: 20px;
-}
 
-#aside ul {
-  padding-left: 30px;
-}
-
-#aside img {
-  width: 276px
-}
-
-.dualbrand {
-  float: right;
-  padding-right: 10px;
-}
 #footer {
   clear: both;
   text-align: center;
@@ -105,28 +76,49 @@ span.invalid {
   padding-left: 3px;
   color: red;
 }
+
+#menu {
+  border: 1px black solid;
+  background-color: #FFFFFF;
+}
+
+#menuitem {
+  font-color: black;
+}
+
+#menuitem:hover {
+  background-color: white;
+  box-shadow: none;
+  border-bottom: 1px solid black;
+  font-color: black;
+}
+
 form {
-  padding: 1em;
+  margin: auto;
+  padding-top: 10px;
+  padding-right: 50px;
+  padding-left: 50px;
+  padding-bottom: 10px;
   font: 80%/1 sans-serif;
-  width: 375px;
+  width: 500px;
   border: 1px solid #D5D5D5;
 }
 label {
-  float: left;
-  width: 15%;
+  width: 30%;
   margin-left: 20px;
   margin-right: 0.5em;
   padding-top: 0.2em;
-  text-align: right;
+  text-align: left;
   font-weight: bold;
-  color:#363636;
+  color: #363636;
 }
 input {
-  margin-bottom: 8px;
+  margin-left: 50px;
+  margin-bottom: 10px;
 }
 .register {
-  float: left;
-  margin-left: 85px;
+  float: right;
+  margin-left: 200px;
 }
 
 /*  -----  table style  -------  */
@@ -137,7 +129,7 @@ input {
 .simpletablestyle {
   background-color:#E6E7E8;
   clear:both;
-  width: 550px;
+  width: 800px;
 }
 
 .simpletablestyle img {
@@ -152,7 +144,7 @@ input {
 }
 
 .simpletablestyle th {
-	background: url(#{request.contextPath}/resources/gfx/bkg-blkheader.png) black repeat-x top left;
+
   font-size:12px;
   font-weight:normal;
   padding:0 10px 0 5px;
@@ -160,7 +152,7 @@ input {
 }
 
 .simpletablestyle thead {
-  background: url(#{request.contextPath}/resources/gfx/bkg-blkheader.png) black repeat-x top left;
+
   height:31px;
   font-size:10px;
   font-weight:bold;

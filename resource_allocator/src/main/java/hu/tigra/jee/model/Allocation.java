@@ -25,11 +25,13 @@ import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 import java.util.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 
 @SuppressWarnings("serial")
 @Entity
 @XmlRootElement
-@Table(uniqueConstraints = @UniqueConstraint(columnNames = "email"))
+//@Table(uniqueConstraints = @UniqueConstraint(columnNames = "email"))
 public class Allocation extends EqualsById implements Serializable {
 
     @Id

@@ -52,12 +52,12 @@ public class AllocationController {
     public void register() throws Exception {
         try {
             allocationRegistration.register(newAllocation);
-            FacesMessage m = new FacesMessage(FacesMessage.SEVERITY_INFO, "Registered!", "Registration successful");
+            FacesMessage m = new FacesMessage(FacesMessage.SEVERITY_INFO, "Lefoglalva!", "Foglalás sikeres!");
             facesContext.addMessage(null, m);
             initNewAllocation();
         } catch (Exception e) {
             String errorMessage = getRootErrorMessage(e);
-            FacesMessage m = new FacesMessage(FacesMessage.SEVERITY_ERROR, errorMessage, "Registration unsuccessful");
+            FacesMessage m = new FacesMessage(FacesMessage.SEVERITY_ERROR, errorMessage, "A foglalás nem sikerült");
             facesContext.addMessage(null, m);
         }
     }

@@ -6,26 +6,28 @@
                 xmlns:h="http://java.sun.com/jsf/html"
                 template="/WEB-INF/templates/default.xhtml">
     <ui:define name="content">
-        <h1>Allocation list</h1>
+        <h1>Foglaló rendszer</h1>
 
         <h:form id="reg">
-            <h2>Allocation Registration</h2>
+            <h2>Terem foglalása</h2>
             <h:panelGrid columns="3" columnClasses="titleCell">
-                <h:outputLabel for="subject" value="Allocation:"/>
+                <h:outputLabel for="subject" value="Foglalás tárgya:"/>
                 <h:inputText id="subject" value="#{newAllocation.subject}"/>
                 <h:message for="subject" errorClass="invalid"/>
 
-                <h:outputLabel for="email" value="Email:"/>
+                <h:outputLabel for="email" value="Email cím:"/>
                 <h:inputText id="email" value="#{newAllocation.email}"/>
                 <h:message for="email" errorClass="invalid"/>
-                <h:outputLabel for="start" value="Start:"/>
+
+                <h:outputLabel for="start" value="Kezdő dátum:"/>
                 <h:inputText id="start" value="#{newAllocation.start}" label="Start date">
-                    <f:convertDateTime pattern="yyyy-mm-dd"/>
+                    <f:convertDateTime pattern="k:m"/>
                 </h:inputText>
                 <h:message for="start" errorClass="invalid"/>
-                <h:outputLabel for="stop" value="Stop:"/>
+
+                <h:outputLabel for="stop" value="Vége dátum:"/>
                 <h:inputText id="stop" value="#{newAllocation.stop}" label="Stop date">
-                    <f:convertDateTime pattern="yyyy-mm-dd"/>
+                    <f:convertDateTime pattern="k:m"/>
                 </h:inputText>
                 <h:message for="stop" errorClass="invalid"/>
             </h:panelGrid>
@@ -34,7 +36,7 @@
                 <h:panelGrid columns="2">
                     <h:commandButton id="register"
                                      action="#{allocationController.register}"
-                                     value="Register" styleClass="register"/>
+                                     value="Foglalás" styleClass="register"/>
                     <h:messages styleClass="messages"
                                 errorClass="invalid" infoClass="valid"
                                 warnClass="warning" globalOnly="true"/>
@@ -43,19 +45,19 @@
         </h:form>
 
 
-        <h2>Allocations</h2>
+        <h2>Foglalások listája</h2>
         <h:panelGroup rendered="#{empty allocations}">
-            <em>No registered allocations.</em>
+            <em>Jelenleg nincs rögzített foglalás a rendszerben.</em>
         </h:panelGroup>
         <h:dataTable var="_allocation" value="#{allocations}"
                      rendered="#{not empty allocations}"
                      styleClass="simpletablestyle">
             <h:column>
-                <f:facet name="header">Allocations id</f:facet>
+                <f:facet name="header">Foglalás azonosító</f:facet>
                 #{_allocation.id}
             </h:column>
             <h:column>
-                <f:facet name="header">Subject</f:facet>
+                <f:facet name="header">Foglalás tárgya</f:facet>
                 #{_allocation.subject}
             </h:column>
             <h:column>
@@ -63,12 +65,18 @@
                 #{_allocation.email}
             </h:column>
             <h:column>
-                <f:facet name="header">Start date</f:facet>
-                #{_allocation.start}
+                <f:facet name="header">Kezdő időpont</f:facet>
+                <!--#{_allocation.start}-->
+                <h:outputText value="#{_allocation.start}">
+                    <f:convertDateTime type="date" pattern="k:mm"/>
+                </h:outputText>
             </h:column>
             <h:column>
-                <f:facet name="header">End date</f:facet>
-                #{_allocation.stop}
+                <f:facet name="header">Vége időpont</f:facet>
+                <!--#{_allocation.stop}-->
+                <h:outputText value="#{_allocation.stop}">
+                    <f:convertDateTime type="date" pattern="k:mm"/>
+                </h:outputText>
             </h:column>
         </h:dataTable>
     </ui:define>
