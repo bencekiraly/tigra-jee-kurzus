@@ -144,7 +144,7 @@ input {
 }
 
 .simpletablestyle th {
-
+  background: url(#{request.contextPath}/resources/gfx/bkg-blkheader.png) black repeat-x top left;
   font-size:12px;
   font-weight:normal;
   padding:0 10px 0 5px;
