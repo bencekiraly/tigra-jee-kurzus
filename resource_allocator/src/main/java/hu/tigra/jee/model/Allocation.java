@@ -51,7 +51,7 @@ public class Allocation extends EqualsById implements Serializable {
     private Date start;
 
     @NotNull
-    private Date stop;
+    private Date end;
 
     public Long getId() {
         return id;
@@ -85,11 +85,11 @@ public class Allocation extends EqualsById implements Serializable {
         this.start = start;
     }
 
-    public Date getStop() {
-        return stop;
+    public Date getEnd() {
+        return end;
     }
 
-    public void setStop(Date stop) {
-        this.stop = stop;
+    public void setEnd(Date end) {
+        this.end = end;
     }
 }

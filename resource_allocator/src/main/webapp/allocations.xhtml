@@ -4,13 +4,16 @@
                 xmlns:ui="http://java.sun.com/jsf/facelets"
                 xmlns:f="http://java.sun.com/jsf/core"
                 xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
                 template="/WEB-INF/templates/default.xhtml">
     <ui:define name="content">
         <h1>Foglaló rendszer</h1>
 
+
         <h:form id="reg">
             <h2>Terem foglalása</h2>
             <h:panelGrid columns="3" columnClasses="titleCell">
+
                 <h:outputLabel for="subject" value="Foglalás tárgya:"/>
                 <h:inputText id="subject" value="#{newAllocation.subject}"/>
                 <h:message for="subject" errorClass="invalid"/>
@@ -26,7 +29,7 @@
                 <h:message for="start" errorClass="invalid"/>
 
                 <h:outputLabel for="stop" value="Vége dátum:"/>
-                <h:inputText id="stop" value="#{newAllocation.stop}" label="Stop date">
+                <h:inputText id="stop" value="#{newAllocation.end}" label="Stop date">
                     <f:convertDateTime pattern="k:m"/>
                 </h:inputText>
                 <h:message for="stop" errorClass="invalid"/>
@@ -34,7 +37,7 @@
 
             <p>
                 <h:panelGrid columns="2">
-                    <h:commandButton id="register"
+                    <p:commandButton id="register"
                                      action="#{allocationController.register}"
                                      value="Foglalás" styleClass="register"/>
                     <h:messages styleClass="messages"
@@ -42,6 +45,7 @@
                                 warnClass="warning" globalOnly="true"/>
                 </h:panelGrid>
             </p>
+
         </h:form>
 
 
@@ -74,7 +78,7 @@
             <h:column>
                 <f:facet name="header">Vége időpont</f:facet>
                 <!--#{_allocation.stop}-->
-                <h:outputText value="#{_allocation.stop}">
+                <h:outputText value="#{_allocation.end}">
                     <f:convertDateTime type="date" pattern="k:mm"/>
                 </h:outputText>
             </h:column>

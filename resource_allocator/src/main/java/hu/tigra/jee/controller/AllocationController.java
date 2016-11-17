@@ -16,6 +16,7 @@
  */
 package hu.tigra.jee.controller;
 
+
 import hu.tigra.jee.model.Allocation;
 import hu.tigra.jee.service.AllocationRegistration;
 
@@ -26,6 +27,11 @@ import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
+
+import java.io.Serializable;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
+
 
 // The @Model stereotype is a convenience mechanism to make this a request-scoped bean that has an
 // EL name
@@ -43,6 +49,7 @@ public class AllocationController {
     @Produces
     @Named
     private Allocation newAllocation;
+
 
     @PostConstruct
     public void initNewAllocation() {
