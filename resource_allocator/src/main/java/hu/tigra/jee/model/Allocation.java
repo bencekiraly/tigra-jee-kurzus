@@ -19,6 +19,8 @@ package hu.tigra.jee.model;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
+import javax.faces.bean.ManagedBean;
+import javax.faces.component.html.HtmlInputHidden;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -37,6 +39,8 @@ public class Allocation extends EqualsById implements Serializable {
     @Id
     @GeneratedValue
     private Long id;
+
+    private int roomId;
 
     @NotNull
     @Size(min = 1, max = 25)
@@ -59,6 +63,14 @@ public class Allocation extends EqualsById implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public int getRoomId() {
+        return roomId;
+    }
+
+    public void setRoomId(int roomId) {
+        this.roomId = roomId;
     }
 
     public String getSubject() {

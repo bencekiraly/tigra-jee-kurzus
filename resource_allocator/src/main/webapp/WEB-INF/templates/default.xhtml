@@ -29,15 +29,15 @@
 <h:body>
     <div id="container">
         <p:menubar id="menu">
-            <p:menuitem value="1-es terem" url="allocations.jsf" id="terem1"/>
-            <p:menuitem value="2-es terem" url="allocations.jsf" id="terem2"/>
-            <p:menuitem value="3-es terem" url="allocations.jsf" id="terem3"/>
+            <p:menuitem value="1-es terem" url="allocations.jsf?terem=1" id="terem1"/>
+            <p:menuitem value="2-es terem" url="allocations.jsf?terem=2" id="terem2"/>
+            <p:menuitem value="3-es terem" url="allocations.jsf?terem=3" id="terem3"/>
         </p:menubar>
 
         <div id="content">
             <ui:insert name="content">
                     [Template content will be inserted here]
-         </ui:insert>
+            </ui:insert>
         </div>
         <div id="footer">
             <p>
