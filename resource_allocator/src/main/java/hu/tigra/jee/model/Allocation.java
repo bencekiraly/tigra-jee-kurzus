@@ -40,6 +40,7 @@ public class Allocation extends EqualsById implements Serializable {
     @GeneratedValue
     private Long id;
 
+    @NotNull
     private int roomId;
 
     @NotNull

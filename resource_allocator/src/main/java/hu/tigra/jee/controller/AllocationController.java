@@ -50,7 +50,6 @@ public class AllocationController {
     @Named
     private Allocation newAllocation;
 
-
     @PostConstruct
     public void initNewAllocation() {
         newAllocation = new Allocation();
@@ -61,8 +60,8 @@ public class AllocationController {
             allocationRegistration.register(newAllocation);
             FacesMessage m = new FacesMessage(FacesMessage.SEVERITY_INFO, "Lefoglalva!", "Foglalás sikeres!");
             facesContext.addMessage(null, m);
-            initNewAllocation();
             FacesContext.getCurrentInstance().getExternalContext().redirect("allocations.jsf?terem=" + newAllocation.getRoomId());
+            initNewAllocation();
         } catch (Exception e) {
             String errorMessage = getRootErrorMessage(e);
             FacesMessage m = new FacesMessage(FacesMessage.SEVERITY_ERROR, errorMessage, "A foglalás nem sikerült");

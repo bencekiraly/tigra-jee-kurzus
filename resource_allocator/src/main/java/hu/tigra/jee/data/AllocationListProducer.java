@@ -24,24 +24,61 @@ import javax.enterprise.context.RequestScoped;
 import javax.enterprise.event.Observes;
 import javax.enterprise.event.Reception;
 import javax.enterprise.inject.Produces;
+import javax.faces.bean.ManagedBean;
+import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.util.ArrayList;
 import java.util.List;
 
+@ManagedBean(name = "filteredView")
 @RequestScoped
 public class AllocationListProducer {
+
 
     @Inject
     private AllocationRepository allocationRepository;
 
     private List<Allocation> allocations;
+    private List<Allocation> allocations1;
+    private List<Allocation> allocations2;
 
     // @Named provides access the return value via the EL variable name "members" in the UI (e.g.
     // Facelets or JSP view)
     @Produces
     @Named
     public List<Allocation> getAllocations() {
-        return allocations;
+        List<Allocation> filteredAllocation = new ArrayList();
+        for (Allocation allocation : allocations) {
+            if (allocation.getRoomId() == 1) {
+                filteredAllocation.add(allocation);
+            }
+        }
+        return filteredAllocation;
+    }
+
+    @Produces
+    @Named
+    public List<Allocation> getAllocations1() {
+        List<Allocation> filteredAllocation = new ArrayList();
+        for (Allocation allocation : allocations) {
+            if (allocation.getRoomId() == 2) {
+                filteredAllocation.add(allocation);
+            }
+        }
+        return filteredAllocation;
+    }
+
+    @Produces
+    @Named
+    public List<Allocation> getAllocations2() {
+        List<Allocation> filteredAllocation = new ArrayList();
+        for (Allocation allocation : allocations) {
+            if (allocation.getRoomId() == 3) {
+                filteredAllocation.add(allocation);
+            }
+        }
+        return filteredAllocation;
     }
 
     public void onAllocationListChanged(@Observes(notifyObserver = Reception.IF_EXISTS) final Allocation allocation) {
@@ -52,4 +89,6 @@ public class AllocationListProducer {
     public void retrieveAllAllocationsOrderedByDate() {
         allocations = allocationRepository.findAllOrderedByDate();
     }
+
+
 }

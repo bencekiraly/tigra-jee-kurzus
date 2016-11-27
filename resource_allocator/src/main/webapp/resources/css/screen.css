@@ -77,6 +77,12 @@ span.invalid {
   color: red;
 }
 
+.invalid {
+  padding-left: 3px;
+  color: red;
+}
+
+
 #menu {
   border: 1px black solid;
   background-color: #FFFFFF;

@@ -16,4 +16,6 @@
 --
 
 -- You can use this file to load seed data into the database using SQL statements
-
+/*insert into Allocation (id, roomId, subject, email, start, end) values (0, '1', 'teszt1', 't@t', '2011-11-11', '2011-11-11')
+insert into Allocation (id, roomId, subject, email, start, end) values (1, '2', 'teszt2', 't@t', '2011-11-11', '2011-11-11')
+*/
