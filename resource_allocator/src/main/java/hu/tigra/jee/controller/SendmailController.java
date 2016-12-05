@@ -90,8 +90,6 @@ public class SendmailController {
             sendMail(session, newEmailModel.getSender(), newEmailModel.getAddress(), newEmailModel.getSubject(), newEmailModel.getText());
             initNewEmailModel();
         } catch (Exception e) {
-            System.out.println(e.getStackTrace());
-            System.out.println(e.getMessage());
             String errorMessage = getRootErrorMessage(e);
             FacesMessage m = new FacesMessage(FacesMessage.SEVERITY_ERROR, errorMessage, "A küldés nem sikerült");
             facesContext.addMessage(null, m);
@@ -108,8 +106,6 @@ public class SendmailController {
             message.setText(text);
             Transport.send(message);
         } catch (MessagingException e) {
-            System.out.println(e.getStackTrace());
-            System.out.println(e.getMessage());
             throw new RuntimeException(e);
         }
     }
