@@ -199,8 +199,8 @@ We discussed both of these files in detail in The <b>greeter example in depth</b
       serialization="org.jboss.tools.project.examples.cheatsheet.openFileInEditor(path=/${currentProject}/src/main/java/hu/tigra/jee/data/MemberRepository.java,fromLine=32)"/>
   </subitem>
   <subitem
-            label="The JPA criteria api is used to load a member by his or her unique identifier, email address."
-            skip="true">
+          label="The JPA criteria api is used to load a member by his or her unique identifier, emailModel address."
+          skip="true">
     <command
       required="false"
       serialization="org.jboss.tools.project.examples.cheatsheet.openFileInEditor(path=/${currentProject}/src/main/java/hu/tigra/jee/data/MemberRepository.java,fromLine=40,toLine=47)"/>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:p="http://primefaces.org/ui" xmlns:c="http://java.sun.com/jsp/jstl/core"
+
+                template="/WEB-INF/templates/default.xhtml">
+    <ui:define name="content">
+
+        <h1>Elküldött levelek</h1>
+
+        <h:link value="Új üzenet" outcome="javamail"/>
+
+        <p>
+            <p:clock pattern="HH:mm:ss dd.MM.yyyy" mode="server"/>
+        </p>
+
+        <h:panelGroup
+                rendered="#{empty emailModels}">
+            <em>Még nem küldtek emailt.</em>
+        </h:panelGroup>
+
+        <h:dataTable var="_emailModel" value="#{emailModels}"
+                     rendered="#{not empty emailModels}"
+                     styleClass="simpletablestyle">
+            <h:column>
+                <f:facet name="header">Feladó</f:facet>
+                #{_emailModel.sender}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Címzett</f:facet>
+                #{_emailModel.address}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Tárgy</f:facet>
+                #{_emailModel.subject}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Üzenet</f:facet>
+                #{_emailModel.text}
+            </h:column>
+        </h:dataTable>
+    </ui:define>
+</ui:composition>
